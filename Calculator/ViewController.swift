@@ -36,8 +36,11 @@ class ViewController: UIViewController {
                 operation = "*"
             }else if sender.tag == 3 {
                 operation = "-"
-            }else{
+            }else if sender.tag == 4{
                 operation = "+"
+            }
+            else {
+                operation = "%"
             }
           
             
@@ -75,6 +78,8 @@ class ViewController: UIViewController {
                     resultLabel.text = "\(num1 / num2)"}
                 else{
                     resultLabel.text = ""}
+            case "%":
+                resultLabel.text = "\(Int(num1) % Int(num2))"
                 
             default:
                 resultLabel.text = ""
