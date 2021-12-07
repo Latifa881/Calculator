@@ -48,7 +48,7 @@
                                                     <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Irm-rh-glF"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNI-OP-UXa">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNI-OP-UXa">
                                                 <rect key="frame" x="104" y="0.0" width="102" height="129"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,6 +56,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="±">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="signButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ybe-y3-b8a"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szo-L8-c5I">
                                                 <rect key="frame" x="208" y="0.0" width="102" height="129"/>
@@ -237,7 +240,7 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="operationsButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iwb-fF-jel"/>
+                                                    <action selector="operationsButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAr-Sm-G6n"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -268,6 +271,9 @@
                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="decimalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kg7-eH-MWz"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9l-1R-zIh">
                                                         <rect key="frame" x="104" y="0.0" width="102" height="129"/>

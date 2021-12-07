@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     var number1:String=""
     var operation:String=""
     var number2:String=""
+    var number1Sign:String=""
+    var number2Sign:String=""
+    var number1Decimal:String=""
+    var number2Decimal:String=""
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +28,16 @@ class ViewController: UIViewController {
     @IBAction func clearButton(_ sender: UIButton) {
         resultLabel.text = ""
         number1=""
-        operation=""
         number2=""
+        // * - / + %
+        operation=""
+        // - +
+        number1Sign=""
+        number2Sign=""
+        // .
+        number1Decimal=""
+        number2Decimal=""
+    
     }
     @IBAction func operationsButtons(_ sender: UIButton) {
        
@@ -39,7 +51,7 @@ class ViewController: UIViewController {
             }else if sender.tag == 4{
                 operation = "+"
             }
-            else {
+            else if sender.tag == 5 {
                 operation = "%"
             }
           
@@ -48,6 +60,44 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func signButton(_ sender: UIButton) {
+        //tag 1 ==> +
+        //tag 2 ==> -
+        if operation.isEmpty {
+            if sender.tag == 1{
+                number1Sign="-"
+                sender.tag = 2
+            }else{
+                number1Sign=""
+                sender.tag = 1
+            }
+            resultLabel.text = number1Sign + number1
+        }else {
+            if sender.tag == 1{
+                number2Sign="-"
+                sender.tag = 2
+            }else{
+                number2Sign=""
+                sender.tag = 1
+            }
+            resultLabel.text = number2Sign + number2
+        }
+        
+    }
+    @IBAction func decimalButton(_ sender: UIButton) {
+        
+        if operation.isEmpty && number1Decimal.isEmpty{
+            number1Decimal="."
+            number1 += number1Decimal
+            resultLabel.text = number1
+            
+        } else if !operation.isEmpty && number2Decimal.isEmpty{
+            number2Decimal="."
+            number2 += number2Decimal
+            resultLabel.text = number2
+        }
+        
+    }
     @IBAction func numbersButton(_ sender: UIButton) {
         guard let buttonTitle=sender.titleLabel?.text else{return}
         
@@ -63,6 +113,9 @@ class ViewController: UIViewController {
     }
     @IBAction func calculateResultButton(_ sender: UIButton) {
         if !number1.isEmpty && !operation.isEmpty && !number2.isEmpty{
+            
+            number1 = number1Sign+number1
+            number2 = number2Sign+number2
             
             guard let num1 = Double(number1),let  num2 = Double(number2)else {return}
             
@@ -90,6 +143,7 @@ class ViewController: UIViewController {
           
             number2 = ""
             operation = ""
+            number2Sign=""
             
         }
     }
